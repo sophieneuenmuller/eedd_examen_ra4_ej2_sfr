@@ -22,40 +22,40 @@ public class CasaDaoArray implements ICasaDAO {
 
     @Override
     public Casa obtenerCasaPorID(int identificador) {
-        Casa Casa = null;
-        for (Casa CasaLista : listaCasas) {
-            if (CasaLista.getIdentificador() == identificador) {
-                Casa = CasaLista;
+        Casa casa = null;
+        for (Casa casaLista : listaCasas) {
+            if (casaLista.getIdentificador() == identificador) {
+                casa = casaLista;
                 break;
             }
         }
-        return Casa;
+        return casa;
     }
 
     @Override
-    public Casa actualizarCasa(Casa Casa) {
-        Casa CasaActualizado = null;
+    public Casa actualizarCasa(Casa casa) {
+        Casa casaActualizada = null;
 
         for (int i = 0; i < listaCasas.size(); i++) {
-            Casa CasaLista = listaCasas.get(i);
-            if (CasaLista.getIdentificador() == Casa.getIdentificador()) {
-                listaCasas.set(i, Casa);
-                CasaActualizado = Casa;
+            Casa casaLista = listaCasas.get(i);
+            if (casaLista.getIdentificador() == casa.getIdentificador()) {
+                listaCasas.set(i, casa);
+                casaActualizada = casa;
                 break;
             }
         }
-        return CasaActualizado; // no encontrado
+        return casaActualizada; // no encontrado
     }
 
     @Override
-    public Casa crearCasa(Casa Casa) {
-        listaCasas.add(Casa);
-        return Casa;
+    public Casa crearCasa(Casa casa) {
+        listaCasas.add(casa);
+        return casa;
     }
 
     @Override
-    public void borrarCasa(Casa Casa) {
-        listaCasas.removeIf(c -> c.getIdentificador() == Casa.getIdentificador());
+    public void borrarCasa(Casa casa) {
+        listaCasas.removeIf(c -> c.getIdentificador() == casa.getIdentificador());
     }
 
     @Override
@@ -65,17 +65,17 @@ public class CasaDaoArray implements ICasaDAO {
 
     @Override
     public List<Casa> obtenerCasaPorNombre(String nombre) {
-        List<Casa> listaCasasMarca= null;
+        List<Casa> listaCasasNombre= null;
 
-        for (Casa Casa : listaCasas) {
-            if (Casa.getNombre().equals(nombre)) {
-                if (listaCasasMarca == null) {
-                    listaCasasMarca = new ArrayList<>();
+        for (Casa casa : listaCasas) {
+            if (casa.getNombre().equals(nombre)) {
+                if (listaCasasNombre == null) {
+                    listaCasasNombre = new ArrayList<>();
                 }
-                listaCasasMarca.add(Casa);
+                listaCasasNombre.add(casa);
             }
         }
 
-        return listaCasasMarca;
+        return listaCasasNombre;
     }
 }

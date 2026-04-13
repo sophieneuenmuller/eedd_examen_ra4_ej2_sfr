@@ -106,7 +106,7 @@ public class AppHogwarts {
         Casa casaActualizada = iCasaDAO.actualizarCasa(casa);
 
         if (casaActualizada != null) {
-            System.out.println("Casa actualizado: " + casaActualizada);
+            System.out.println("Casa actualizada: " + casaActualizada);
         } else {
             System.out.println("No se encontró el Casa para actualizar");
         }
@@ -122,7 +122,7 @@ public class AppHogwarts {
 
         if (casa != null) {
             iCasaDAO.borrarCasa(casa);
-            System.out.println("Casa borrado correctamente");
+            System.out.println("Casa borrada correctamente");
         } else {
             System.out.println("No existe Casa con id " + id);
         }
