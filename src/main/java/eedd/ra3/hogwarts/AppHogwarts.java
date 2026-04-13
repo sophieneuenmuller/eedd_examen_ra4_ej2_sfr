@@ -88,13 +88,13 @@ public class AppHogwarts {
         System.out.println("ALTA DE CASA");
         System.out.println("#########################################\n");
 
-        Casa CasaNuevo = new Casa();
-        CasaNuevo.setIdentificador(8);
-        CasaNuevo.setNombre("Aula magna");
+        Casa casaNueva = new Casa();
+        casaNueva.setIdentificador(8);
+        casaNueva.setNombre("Aula magna");
 
-        iCasaDAO.crearCasa(CasaNuevo);
+        iCasaDAO.crearCasa(casaNueva);
 
-        System.out.println("Casa creada: " + CasaNuevo);
+        System.out.println("Casa creada: " + casaNueva);
         System.out.println("-------------------------------------------------\n\n");
     }
 
@@ -102,11 +102,11 @@ public class AppHogwarts {
         System.out.println("ACTUALIZAR CASA");
         System.out.println("#########################################\n");
 
-        Casa Casa = new Casa(1, "Gryffindorrrr");
-        Casa CasaActualizado = iCasaDAO.actualizarCasa(Casa);
+        Casa casa = new Casa(1, "Gryffindorrrr");
+        Casa casaActualizada = iCasaDAO.actualizarCasa(casa);
 
-        if (CasaActualizado != null) {
-            System.out.println("Casa actualizado: " + CasaActualizado);
+        if (casaActualizada != null) {
+            System.out.println("Casa actualizado: " + casaActualizada);
         } else {
             System.out.println("No se encontró el Casa para actualizar");
         }
@@ -118,10 +118,10 @@ public class AppHogwarts {
         System.out.println("BORRAR CASA ID: " + id);
         System.out.println("#########################################\n");
 
-        Casa Casa = iCasaDAO.obtenerCasaPorID(id);
+        Casa casa = iCasaDAO.obtenerCasaPorID(id);
 
-        if (Casa != null) {
-            iCasaDAO.borrarCasa(Casa);
+        if (casa != null) {
+            iCasaDAO.borrarCasa(casa);
             System.out.println("Casa borrado correctamente");
         } else {
             System.out.println("No existe Casa con id " + id);
