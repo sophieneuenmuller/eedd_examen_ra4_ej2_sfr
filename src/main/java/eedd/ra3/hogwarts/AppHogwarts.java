@@ -90,7 +90,7 @@ public class AppHogwarts {
 
         Casa casaNueva = new Casa();
         casaNueva.setIdentificador(8);
-        casaNueva.setNombre("Aula magna");
+        casaNueva.setNombre("Aula EEDD");
 
         iCasaDAO.crearCasa(casaNueva);
 
